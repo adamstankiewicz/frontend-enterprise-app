@@ -16,7 +16,7 @@ const prodConfig = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        search: 'dashboard@https://frontend-enterprise-search.surge.sh/remoteEntry.js',
+        search: 'search@https://frontend-enterprise-search.surge.sh/remoteEntry.js',
         dashboard: 'dashboard@https://frontend-enterprise-dashboard.surge.sh/remoteEntry.js',
       },
       shared: deps,
