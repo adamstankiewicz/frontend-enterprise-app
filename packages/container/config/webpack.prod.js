@@ -15,7 +15,9 @@ const prodConfig = {
   plugins: [
     new ModuleFederationPlugin({
       name: 'container',
-      remotes: {},
+      remotes: {
+        dashboard: 'dashboard@https://frontend-enterprise-dashboard.surge.sh/remoteEntry.js',
+      },
       shared: deps,
     }),
     new CleanWebpackPlugin(),
