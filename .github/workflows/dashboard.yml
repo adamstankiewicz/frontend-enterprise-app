@@ -21,12 +21,13 @@ jobs:
           fetch-depth: 0
       
       - uses: actions/setup-node@master
-        run: npm install -g surge
         with:
           node-version: 12
 
       - name: Install dependencies
-        run: npm ci
+        run:
+          - npm ci
+          - npm install -g surge
 
       # - name: Lint
       #   run: npm run lint
