@@ -14,7 +14,7 @@ const devConfig = {
   },
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: 'http://localhost:42020',
+    publicPath: 'http://localhost:42020/',
   },
   plugins: [
     new ModuleFederationPlugin({

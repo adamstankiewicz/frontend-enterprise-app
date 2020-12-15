@@ -8,7 +8,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: 'https://edx.org',
+    publicPath: 'https://frontend-enterprise-dashboard/',
   },
   plugins: [
     new ModuleFederationPlugin({

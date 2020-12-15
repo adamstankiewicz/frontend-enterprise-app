@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
-import { Container, Row, Col } from '@edx/paragon';
+import { Button, Container, Row, Col } from '@edx/paragon';
 
 import './App.scss';
 

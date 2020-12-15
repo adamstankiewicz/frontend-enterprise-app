@@ -1,15 +1,15 @@
-name: deploy-container
+name: deploy-dashboard
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'packages/container/**'
+      - 'packages/dashboard/**'
 
 defaults:
   run:
-    working-directory: packages/container
+    working-directory: packages/dashboard
 
 jobs:
   deploy:
@@ -36,6 +36,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # - name: Deploy
-      #   run: npm install -g surge
-      #   run: surge ./dist ${{ secrets.DASHBOARD_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - name: Deploy
+        run: npm install -g surge
+        run: surge ./dist ${{ secrets.DASHBOARD_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
