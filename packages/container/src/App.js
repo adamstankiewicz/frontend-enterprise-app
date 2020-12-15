@@ -33,7 +33,7 @@ export default () => {
                     <Col>
                       <Nav variant="tabs" className="nav-tabs-border-bottom">
                         <Nav.Item>
-                          <Nav.Link as={NavLink} to="/admin">
+                          <Nav.Link as={NavLink} to="/admin" exact>
                             Home
                           </Nav.Link>
                         </Nav.Item>

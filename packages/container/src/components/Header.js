@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from '@edx/paragon';
+import { Navbar, Nav } from '@edx/paragon';
 import { NavLink, Link } from 'react-router-dom';
 import edXLogo from '@edx/brand/logo.svg';
 
@@ -17,7 +17,7 @@ export default () => {
           <Nav.Link as={NavLink} to="/" className="btn-link" exact>Dashboard</Nav.Link>
           <Nav.Link as={NavLink} to="/search" className="btn-link">Find a Course</Nav.Link>
         </Nav>
-        <Nav className="nav-link-border-bottom">
+        <Nav>
           <Nav.Link as={NavLink} to="/admin" className="mr-3">Manage</Nav.Link>
           <Nav.Link href="https://edx.org" className="mr-3">Help</Nav.Link>
           <AvatarDropdown />
