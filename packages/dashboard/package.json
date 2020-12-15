@@ -8,6 +8,7 @@
   "dependencies": {
     "@edx/brand": "npm:@edx/brand-edx.org@^1.4.0",
     "@edx/paragon": "^12.4.1",
+    "@emotion/react": "^11.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
