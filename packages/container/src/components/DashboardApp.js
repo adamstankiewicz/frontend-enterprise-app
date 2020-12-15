@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { mount } from 'dashboard/DashboardApp';
 
@@ -6,10 +7,21 @@ import { mount } from 'dashboard/DashboardApp';
 // ``mount`` function to inject the DashboardApp MFE into the div.
 export default () => {
   const ref = useRef();
+  const history = useHistory();
 
   useEffect(() => {
-    mount(ref.current)
-  });
+    const { onParentNavigate } = mount(ref.current, {
+      onNavigate: ({ pathname: nextPathname }) => {
+        const { pathname } = history.location;
+
+        if (pathname !== nextPathname) {
+          history.push(nextPathname);
+        }
+      },
+    });
+
+    history.listen(onParentNavigate);
+  }, []);
 
   return (
     <div className="py-4" ref={ref} />

@@ -18,15 +18,7 @@ export default () => {
           <Nav.Link as={NavLink} to="/search" className="btn-link">Find a Course</Nav.Link>
         </Nav>
         <Nav>
-          {/* <Nav.Link as={NavLink} to="/admin" className="mr-3">Manage</Nav.Link> */}
-          <NavDropdown title="Manage" id="nav-dropdown" className="mr-3">
-            <NavDropdown.Item as={NavLink} to="/admin">Home</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/admin/subscriptions">Subscriptions</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/admin/codes">Codes</NavDropdown.Item>
-            <NavDropdown.Item as={NavLink} to="/admin/settings">Settings</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item as={NavLink} to="/admin/support">Support</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link as={NavLink} to="/admin" className="mr-3">Manage</Nav.Link>
           <Nav.Link href="https://edx.org" className="mr-3">Help</Nav.Link>
           <AvatarDropdown />
         </Nav>

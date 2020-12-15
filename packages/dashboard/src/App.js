@@ -1,12 +1,12 @@
 import React from 'react';
+import { Link, Router } from 'react-router-dom';
 import { Container, Row, Col } from '@edx/paragon';
-import { Link, BrowserRouter } from 'react-router-dom';
 
 import './App.scss';
 
-export default () => {
+export default ({ history }) => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Container>
         <Row>
           <Col>
@@ -15,6 +15,6 @@ export default () => {
           </Col>
         </Row>
       </Container>
-    </BrowserRouter>
+    </Router>
   );
 };

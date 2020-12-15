@@ -23,7 +23,7 @@ export default () => {
               return (
                 <Container className="admin-sidebar-navigation">
                   <Row className="vh-100">
-                    {/* <Col lg={3} className="border-right py-3">
+                    <Col lg={3} className="border-right py-3">
                       <Nav className="flex-column">
                         <Nav.Link as={NavLink} to="/admin">Home</Nav.Link>
                         <div className="my-2" />
@@ -33,7 +33,7 @@ export default () => {
                         <div className="my-2" />
                         <Nav.Link as={NavLink} to="/admin/support">Support</Nav.Link>
                       </Nav>
-                    </Col> */}
+                    </Col>
                     <Col className="py-3">
                       <h2>Welcome, Adam!</h2>
                       <p className="lead">This page may include:</p>
