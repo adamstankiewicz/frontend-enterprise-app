@@ -13,11 +13,11 @@ export default () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="nav-link-border-bottom mr-auto">
           <Nav.Link as={NavLink} to="/" className="btn-link" exact>Dashboard</Nav.Link>
           <Nav.Link as={NavLink} to="/search" className="btn-link">Find a Course</Nav.Link>
         </Nav>
-        <Nav>
+        <Nav className="nav-link-border-bottom">
           <Nav.Link as={NavLink} to="/admin" className="mr-3">Manage</Nav.Link>
           <Nav.Link href="https://edx.org" className="mr-3">Help</Nav.Link>
           <AvatarDropdown />

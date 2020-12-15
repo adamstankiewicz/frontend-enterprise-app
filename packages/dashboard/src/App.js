@@ -7,7 +7,7 @@ import './App.scss';
 export default ({ history }) => {
   return (
     <Router history={history}>
-      <Container>
+      <Container className="py-4">
         <Row>
           <Col>
             <h1 className="mb-3">My courses</h1>

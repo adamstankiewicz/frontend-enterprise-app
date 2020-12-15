@@ -33,6 +33,6 @@ export default () => {
   );
 
   return (
-    <div className="py-4" ref={ref} />
+    <div ref={ref} />
   );
 };

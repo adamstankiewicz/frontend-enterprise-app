@@ -8,12 +8,15 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
+    publicPath: 'https://edx.org',
   },
   plugins: [
     new ModuleFederationPlugin({
       name: 'search',
       filename: 'remoteEntry.js',
-      exposes: {},
+      exposes: {
+        './SearchApp': './src/bootstrap',
+      },
       shared: deps,
     }),
   ],

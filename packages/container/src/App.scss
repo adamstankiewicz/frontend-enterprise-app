@@ -13,10 +13,37 @@
   flex: 1;
 }
 
-.admin-sidebar-navigation {
+.nav-link-border-bottom,
+.nav-tabs-border-bottom,
+.nav-tabs-border-left,
+.nav-tabs-border-0 {
+
   .nav-link {
+    border: 0;
+    color: $gray-500;
+
+    &:hover,
+    &:focus,
     &.active {
-      border-left: 4px solid $primary;
+      color: $primary;
     }
+  }
+}
+
+.nav-link-border-bottom .nav-link,
+.nav-tabs-border-bottom .nav-link {
+  border-bottom: 4px solid transparent;
+  &:hover,
+  &:focus,
+  &.active {
+    border-bottom: 4px solid $primary;
+  }
+}
+
+.nav-tabs-border-left .nav-link {
+  &:hover,
+  &:focus,
+  &.active {
+    border-left: 2px solid $primary;
   }
 }

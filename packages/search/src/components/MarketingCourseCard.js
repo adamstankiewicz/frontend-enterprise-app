@@ -5,14 +5,18 @@ import styled from '@emotion/styled'
 
 import './export.scss';
 
-const getCSSVariable = (name) => {
-  return getComputedStyle(document.documentElement).getPropertyValue(name);
+const getSCSSVariable = (name) => {
+  const style = getComputedStyle(document.documentElement).getPropertyValue(name);
+  
+  if (!style) {
+    console.warning(`[getSCSSVariable] ${name} does not exist as a computed style.`)
+  }
 };
 
 const StyledCard = styled(Card)`
-  box-shadow: ${getCSSVariable('--level-1-box-shadow')};
+  box-shadow: ${getSCSSVariable('--level-1-box-shadow')};
   &:hover {
-    box-shadow: ${getCSSVariable('--level-2-box-shadow')};
+    box-shadow: ${getSCSSVariable('--level-2-box-shadow')};
   }
   min-height: 160px;
 `;

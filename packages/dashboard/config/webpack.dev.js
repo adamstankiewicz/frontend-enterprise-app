@@ -12,6 +12,10 @@ const devConfig = {
       index: 'index.html',
     },
   },
+  output: {
+    filename: '[name].[contenthash].js',
+    publicPath: 'http://localhost:42020',
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: 'dashboard',

@@ -8,7 +8,6 @@
   "dependencies": {
     "@edx/brand": "npm:@edx/brand-edx.org@^1.4.0",
     "@edx/paragon": "^12.4.1",
-    "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
     "i": "^0.3.6",
     "npm": "^6.14.9",

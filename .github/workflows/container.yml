@@ -36,4 +36,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # - name: Deploy
+      - name: Deploy
+      - run: npm install -g surge
+      - run: surge ./ ${{ secrets.DASHBOARD_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
