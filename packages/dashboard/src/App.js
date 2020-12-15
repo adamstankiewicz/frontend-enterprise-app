@@ -11,7 +11,7 @@ export default ({ history }) => {
         <Row>
           <Col>
             <h1 className="mb-3">My courses</h1>
-            <Link to="/search" className="btn btn-primary">Find a course</Link>
+            <Link to="/search" className="btn btn-primary">Find a Course</Link>
           </Col>
         </Row>
       </Container>
