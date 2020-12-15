@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { mount } from 'dashboard/DashboardApp';
@@ -8,20 +8,29 @@ import { mount } from 'dashboard/DashboardApp';
 export default () => {
   const ref = useRef();
   const history = useHistory();
+  const [, setDashboardApp] = useState({});
+  
+  useEffect(
+    () => {
+      const app = mount(ref.current, {
+        onNavigate: ({ pathname: nextPathname }) => {
+          const { pathname } = history.location;
 
-  useEffect(() => {
-    const { onParentNavigate } = mount(ref.current, {
-      onNavigate: ({ pathname: nextPathname }) => {
-        const { pathname } = history.location;
+          if (pathname !== nextPathname) {
+            history.push(nextPathname);
+          }
+        },
+      });
+      const { onPageNavigate } = app;
 
-        if (pathname !== nextPathname) {
-          history.push(nextPathname);
-        }
-      },
-    });
+      if (onPageNavigate) {
+        history.listen(onPageNavigate);
+      }
 
-    history.listen(onParentNavigate);
-  }, []);
+      setDashboardApp(app);
+    },
+    [],
+  );
 
   return (
     <div className="py-4" ref={ref} />
