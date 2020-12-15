@@ -13,7 +13,9 @@ const prodConfig = {
     new ModuleFederationPlugin({
       name: 'search',
       filename: 'remoteEntry.js',
-      exposes: {},
+      exposes: {
+        './SearchApp': './src/bootstrap',
+      },
       shared: deps,
     }),
   ],
