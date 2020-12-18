@@ -30,3 +30,7 @@ Open up http://localhost:42000 to see the Webpack 5 Module Federation architectu
 ```
 lerna run start --scope=<package name> --stream
 ```
+
+## CI/CD
+
+Even though this is a monorepo, packages are configured to deploy independently with their own Github Actions workflow files (see `.github/workflows`). For example, if you make a commit across 2 packages, both CI/CD workflows will run and be deployed. Each deployment should eventually consist of putting the resulting build files (e.g., `dist`) onto an S3 bucket such that packages can use the hosted `remoteEntry.js` files from other packages as a means to share code, components, and applications between packages.
