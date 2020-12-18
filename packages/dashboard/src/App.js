@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
-import { Button, Container, Row, Col } from '@edx/paragon';
+import { Container, Row, Col } from '@edx/paragon';
 
 import './App.scss';
 
@@ -11,7 +11,7 @@ export default ({ history }) => {
         <Row>
           <Col>
             <h1 className="mb-3">My courses</h1>
-            <Link to="/search" className="btn btn-primary">Find a Course</Link>
+            <Link to="/search" className="btn btn-primary">Find a course</Link>
           </Col>
         </Row>
       </Container>

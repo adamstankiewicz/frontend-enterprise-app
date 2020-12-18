@@ -1,7 +1,6 @@
 const { merge } = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
 const deps = require('../package.json').dependencies;
@@ -10,15 +9,16 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(process.cwd(), 'dist'),
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
+      name: 'admin',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './AdminApp': './src/bootstrap',
+      },
       remotes: {
-        search: 'search@https://frontend-enterprise-search.surge.sh/remoteEntry.js',
-        dashboard: 'dashboard@https://frontend-enterprise-dashboard.surge.sh/remoteEntry.js',
-        // admin: 'admin@//localhost:42030/remoteEntry.js',
+        'adminHome': 'adminHome@//localhost:42040/remoteEntry.js',
       },
       shared: deps,
     }),

@@ -18,8 +18,8 @@ export default ({ history }) => {
               </label>
               <SearchField.Advanced
                 className="border-0 bg-white"
-                // onSubmit
-                // onClear
+                onSubmit={() => {}}
+                onClear={() => {}}
               >
                 <SearchField.Input className="form-control-lg" aria-labelledby="search-input-box" />
                 <SearchField.ClearButton />
@@ -35,7 +35,12 @@ export default ({ history }) => {
         </Container>
       </div>
       <Container className="py-4">
+
         <Row>
+          <Col>
+            <h1>Search</h1>
+            <span className="lead">812 results</span>
+          </Col>
           <Col className="d-flex justify-content-end">
             <Pagination pageCount={2} onPageSelect={() => {}} paginationLabel="TODO" />
           </Col>

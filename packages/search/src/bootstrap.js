@@ -7,6 +7,10 @@ import App from './App';
 const mount = (el, { onNavigate, defaultHistory } = {}) => {
   const history = defaultHistory || createMemoryHistory();
 
+  // ensure the MFE has the correct initial path from the container/host, without
+  // adding it to the router history.
+  history.replace(global.location.pathname)
+
   if (onNavigate) {
     history.listen(onNavigate);
   }

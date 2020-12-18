@@ -7,18 +7,23 @@ const deps = require('../package.json').dependencies;
 const devConfig = {
   mode: 'development',
   devServer: {
-    port: 42000,
+    port: 42030,
     historyApiFallback: {
       index: 'index.html',
     },
   },
+  output: {
+    filename: '[name].[contenthash].js',
+  },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
+      name: 'admin',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './AdminApp': './src/bootstrap',
+      },
       remotes: {
-        search: 'search@//localhost:42010/remoteEntry.js',
-        dashboard: 'dashboard@//localhost:42020/remoteEntry.js',
-        admin: 'admin@//localhost:42030/remoteEntry.js',
+        'adminHome': 'adminHome@//localhost:42040/remoteEntry.js',
       },
       shared: deps,
     }),

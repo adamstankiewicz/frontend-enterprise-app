@@ -4,7 +4,7 @@ import edXLogo from '@edx/brand/logo-trademark.svg';
 
 export default () => {
   return (
-    <footer className="border-top py-4">
+    <footer className="border-top py-4 bg-gray-100">
       <Container>
         <Row>
           <Col>

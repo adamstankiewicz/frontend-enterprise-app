@@ -6,7 +6,7 @@ import App from './App';
 
 const mount = (el, { onNavigate, defaultHistory } = {}) => {
   const history = defaultHistory || createMemoryHistory();
-
+  
   // ensure the MFE has the correct initial path from the container/host, without
   // adding it to the router history.
   history.replace(global.location.pathname)
@@ -31,7 +31,7 @@ const mount = (el, { onNavigate, defaultHistory } = {}) => {
 // If we are in development and running in isolation,
 // call mount immediately
 if (process.env.NODE_ENV === 'development') {
-  const devRoot = document.querySelector('#_dashboard-dev-root');
+  const devRoot = document.querySelector('#_admin-home-dev-root');
 
   if (devRoot) {
     mount(devRoot, { defaultHistory: createBrowserHistory() });
