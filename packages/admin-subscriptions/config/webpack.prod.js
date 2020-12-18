@@ -1,34 +1,26 @@
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
 const deps = require('../package.json').dependencies;
 
-const devConfig = {
-  mode: 'development',
-  devServer: {
-    port: 42030,
-    historyApiFallback: {
-      index: 'index.html',
-    },
-  },
+const prodConfig = {
+  mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'admin',
+      name: 'adminSubscriptions',
       filename: 'remoteEntry.js',
       exposes: {
-        './AdminApp': './src/bootstrap',
-      },
-      remotes: {
-        'adminHome': 'adminHome@//localhost:42040/remoteEntry.js',
-        'adminSubscriptions': 'adminSubscriptions@//localhost:42050/remoteEntry.js',
+        './AdminSubscriptionsApp': './src/bootstrap',
       },
       shared: deps,
     }),
+    new CleanWebpackPlugin(),
   ],
 };
 
-module.exports = merge(commonConfig, devConfig);
+module.exports = merge(commonConfig, prodConfig);

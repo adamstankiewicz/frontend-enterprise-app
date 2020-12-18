@@ -7,7 +7,7 @@ const deps = require('../package.json').dependencies;
 const devConfig = {
   mode: 'development',
   devServer: {
-    port: 42030,
+    port: 42050,
     historyApiFallback: {
       index: 'index.html',
     },
@@ -17,14 +17,10 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'admin',
+      name: 'adminSubscriptions',
       filename: 'remoteEntry.js',
       exposes: {
-        './AdminApp': './src/bootstrap',
-      },
-      remotes: {
-        'adminHome': 'adminHome@//localhost:42040/remoteEntry.js',
-        'adminSubscriptions': 'adminSubscriptions@//localhost:42050/remoteEntry.js',
+        './AdminSubscriptionsApp': './src/bootstrap',
       },
       shared: deps,
     }),

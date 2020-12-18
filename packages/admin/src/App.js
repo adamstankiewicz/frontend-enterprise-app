@@ -3,8 +3,7 @@ import { NavLink, Router, Route } from 'react-router-dom';
 import { Container, Row, Col, Nav, } from '@edx/paragon';
 
 import AdminHomeApp from './components/AdminHomeApp';
-
-console.log(AdminHomeApp);
+import AdminSubscriptionsApp from './components/AdminSubscriptionsApp';
 
 import './App.scss';
 
@@ -61,7 +60,7 @@ export default ({ history }) => {
       />
       <Route
         path="/admin/subscriptions"
-        component={AdminHomeApp} 
+        component={AdminSubscriptionsApp} 
       />
     </Router>
   );
