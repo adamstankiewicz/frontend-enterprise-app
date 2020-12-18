@@ -59,6 +59,10 @@ export default ({ history }) => {
         component={AdminHomeApp}
         exact 
       />
+      <Route
+        path="/admin/subscriptions"
+        component={AdminHomeApp} 
+      />
     </Router>
   );
 };
